@@ -15,20 +15,10 @@ pipeline {
     }
 
     stages {
-        stage('Validate') {
+         stage('Gradle Build') {
             steps {
                 
-                sh "mvn validate"
-
-                sh "mvn clean"
-
-            }
-        }
-
-         stage('Build') {
-            steps {
-                
-                sh "mvn compile"
+                sh './gradlew clean build'
 
             }
         }
